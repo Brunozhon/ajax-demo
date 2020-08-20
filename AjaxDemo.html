@@ -4,7 +4,51 @@
     <title>AJAX (Asyncrous JavaScript and XML)</title>
   </head>
   <body>
-    <h1>Bruno XML DTD Templates</h1>
-    
+    <h1>Bruno XML Templates</h1>
+    <button onclick="loadBreakDoc()">Click me to load the breakfast menu example</button>
+    <button onclick="loadButterBread()">Click me to load butter bread</button>
+    <div id="breakfast">
+    </div>
+    <div id="butterb">
+    </div>
+    <p>Note: Safari will only display plain text. To open the code, you must right-click.</p>
+    <script>
+      function loadBreakDoc() {
+        var xhttp = new XMLHttpRequest();
+        
+        xhttp.onreadystatechange = function() {
+          if (this.readyState = 4 && this.status = 200) {
+            document.getElementById("breakfast").innerHTML =
+            this.responseText;
+          }
+        };
+        xhttp.open("GET", "https://github.com/Brunozhon/ajax-demo/blob/master/XML-examples/Example.xml", true);
+        xhttp.send();
+      }
+      function loadButterBread() {
+        var xhttp = new XMLHttpRequest();
+        var XMLdoc, BreakfastXML, i, txt;
+        xhttp.onreadystatechange = function() {
+          if (this.readyState = 4 && this.status = 200) {
+            XMLdoc = this.responseXML;
+            BreakfastXML = XMLdoc.getElementsByTagName("breakfast");
+            Nutrit = XMLdoc.getElementsByTagName("nutrition_facts");
+            for (i = 0; i < BreakfastXML.length; i++) {
+              txt += "Name: " + XMLdoc.getElementsByTagName("name")[i] + " ";
+              txt += "Taste: " + XMLdoc.getElementsByTagName("taste")[i] + " ";
+              //for (j = 0; i < Nutrit.length; j++) {
+              txt += "Calories: " + XMLdoc.getElementsByTagName("cals")[i] + " ";
+              txt += "Total fat: " + XMLdoc.getElementsByTagName("total_fat")[i] + " ";
+              txt += "Cabohadrates: " + XMLdoc.getElementsByTagName("carbs")[i] + " ";
+              txt += "Protien: " + XMLdoc.getElementsByTagName("protien")[i] + "<br>";
+              //}
+            }
+            document.getElementById("butterb").innerHTML = txt;
+          }
+        };
+        xhttp.open("GET", "https://github.com/Brunozhon/ajax-demo/blob/master/XML-examples/Example.xml")
+        
+      }
+    </script>
   </body>
 </html>
