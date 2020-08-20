@@ -1,0 +1,29 @@
+<!-- 
+Use this code at your own risk.
+I will not be reponsible of errors (ecsept this file).
+-->
+<?xml version="1.0" encoding="UTF-8"?>
+<breakfast_menu>
+  <breakfast no="1">
+    <name>Butter Bread</name>
+    <taste>Salty</taste>
+    <nutrition_facts>
+      <cals>250</cals>
+      <total_fat>5g</total_fat>
+      <sat_fat>2.5g</sat_fat>
+      <trans_fat>0g</trans_fat>
+      <carbs>3g</carbs>
+      <protien>10g</protien>
+    </nutrition_facts>
+  </breakfast>
+  <breakfast no="2">
+    <name>Yougurt</name>
+    <taste>Swwet</taste>
+    <nutrition_facts>
+      <cals>150</cals>
+      <total_fat>9g</total_fat>
+      <carbs>0g</carbs>
+      <protien>10g</protien>
+    </nutrition_facts>
+  </breakfast>
+</breakfast_menu>
